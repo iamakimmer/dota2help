@@ -1,0 +1,14 @@
+<div class="hero-unit">
+  <h1>'Allo, 'Allo!</h1>
+  <p>You now have</p>
+
+  <ul>
+      <li ng-repeat="thing in awesomeThings">{{thing}}
+        <button class="btn btn-default" ng-click="removeItem(thing)">Remove</button>
+      </li>
+  </ul>
+  <p>installed.</p>
+  <h3>Enjoy coding! - Yeo</h3>
+  <input class="text" ng-model="item"></input>
+  <button class="btn btn-default" ng-click="addItem(item)">Add</button>
+</div>

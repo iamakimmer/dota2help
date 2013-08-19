@@ -1,0 +1,51 @@
+
+<div id="sidebar">
+<h1>Heroes</h1>
+<p>{{heroes.length}} Total Heroes</p>
+
+
+<div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Action
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+  </ul>
+</div>
+
+<div id="nameSearch"><input type="text" ng-model="search.name" placeholder="Name"></input></div>
+<div><atk f="search.atk"></atk></div>
+<div><roles f="search.roles"></roles></div>
+
+<ul class="herolist">
+    <li class="hero"  ng-click="addHero(hero)" ng-repeat="hero in heroes | filter: search">
+      <img src="{{hero.img}}" alt="{{hero.name}}"></img> {{hero.name}}
+    </li>
+</ul>
+</div>
+
+
+<div id="versusMap">
+  <div ng-repeat="hero in selectedHeroes">
+      <hero name="{{hero.name}}" imagesrc="{{hero.imgPortrait}}" abilities="hero.abilities" ng-click="removeHero(hero)"></hero>
+      <!--<img src="{{hero.img}}" alt="{{hero.name}}" ng-click="removeHero(hero)"></img> {{hero.name}}-->
+  </div>
+</div>
+
+
+<!--
+<div id="versusMap">
+<ul>
+  <li ng-repeat="ability in abilities">
+      <img src="{{ability.img}}" tooltip="{{ability.desc}}" videoPopup="asdf"></img>
+      <div ng-bind-html-unsafe="ability.dname"></div>
+      <div ng-bind-html-unsafe="ability.desc"></div>
+      <div ng-bind-html-unsafe="ability.attrib"></div>
+      <div ng-bind-html-unsafe="ability.affects"></div>
+
+    </li>
+</ul>
+</div>
+
+-->
