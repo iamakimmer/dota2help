@@ -1,0 +1,22 @@
+<div id="sidebar">
+<h1>Heroes</h1>
+<p>{{heroes.length}} Total Heroes</p>
+
+<div id="nameSearch"><input type="text" ng-model="search.name" placeholder="Name"></div>
+<div><atk f="search.atk"></atk></div>
+<div><roles f="search.roles"></roles></div>
+
+<ul class="herolist">
+    <li ng-click="addHero(hero)" ng-repeat="hero in heroes | filter: search">
+      <img src="{{hero.img}}" alt="{{hero.name}}"> {{hero.name}}
+    </li>
+</ul>
+</div>
+<div id="versusMap">
+  <!--<button class="btn" ng-click="clearHeroes()" value="Clear">Clear</button>-->
+  <ul class="inline-block">
+    <li class="selectedHeroes" ng-repeat="hero in selectedHeroes">
+      <hero name="{{hero.name}}" roles="hero.roles" atk="{{hero.atk_l}}" imagesrc="{{hero.imgPortrait}}" abilities="hero.abilities"></hero>
+    </li>
+  </ul>
+</div>
