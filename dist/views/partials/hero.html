@@ -1,0 +1,26 @@
+<div class="hero">
+  <div class="name" ng-click="$parent.remove(name)">{{name}} ({{atk}})</div>
+  <div class="portrait">
+    <img src="{{imagesrc}}" ng-click="$parent.remove(name)">
+  </div>
+  <div class="roles">
+    <div ng-repeat="role in roles">
+      <role role="{{role}}" class="role">
+        <span><img src="/images/{{role}}.png"></span>
+        <span class="role-details">{{role}}</span>
+      </role>
+    </div>
+  </div>
+
+  <div class="abilities">
+    <div class="ability" ng-repeat="ability in abilities">
+      <a href="http://www.youtube.com/watch?v=5n9dPC349Lw" ability="{{ability.dname}}" rel="prettyPhoto"><img src="{{ability.img}}"></a>
+      <div class="ability-details">
+        <span class="name" ng-bind-html-unsafe="ability.dname"></span><br>
+        <span ng-bind-html-unsafe="ability.desc"></span><br>
+        <span ng-bind-html-unsafe="ability.attrib"></span><br>
+        <span ng-bind-html-unsafe="ability.affects"></span>
+      </div>
+    </div>
+  </div>
+</div>
