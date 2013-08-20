@@ -13,6 +13,6 @@ angular.module('dota2sucksApp')
         roles: '=',
         remove: '&'
       },
-      templateUrl: '/views/partials/hero.html'
+      templateUrl: 'views/partials/hero.html'
     };
   });
