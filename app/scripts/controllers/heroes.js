@@ -44,29 +44,26 @@ angular.module('dota2sucksApp')
       $scope.hero = hero;
       //console.log(hero);
       $scope.hero.abilities = $scope.getAbilities(hero);
-      console.log($scope.hero);
+      //console.log($scope.hero);
+
       $scope.selectedHeroes.push(hero);
     };
 
-    $scope.removeHero = function(hero) {
+    $scope.remove = function(name) {
       for (var i = 0; i < $scope.selectedHeroes.length; i++) {
-        if ($scope.selectedHeroes[i].name === hero.name) {
-          $scope.selectedHeroes.splice($scope.selectedHeroes[i], 1);
+        if ($scope.selectedHeroes[i].name === name) {
+          $scope.selectedHeroes.splice(i, 1);
           return;
         }
       }
-    }
+    };
 
     $scope.getAbilities = function(hero) {
       return allAbilities.filter(function (ability) { return ability.hurl === hero.name; });
-    }
-
-
-
+    };
 
     $scope.showDetail = function(hero) {
       $scope.hero = hero;
-      //console.log(allAbilities);
     };
 
     $scope.addDetail = function(hero) {
@@ -74,8 +71,7 @@ angular.module('dota2sucksApp')
       $scope.abilities = allAbilities.filter(function (ability) { return ability.hurl === hero.name; });
     };
 
-    $scope.showMovie = function(videoUrl) {
-      alert("showing movie");
-      console.log("showing movie @", videoUrl);
+    $scope.clearHeroes = function(){
+      $scope.selectedHeroes = [];
     };
   });

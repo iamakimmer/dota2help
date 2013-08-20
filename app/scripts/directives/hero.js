@@ -6,9 +6,12 @@ angular.module('dota2sucksApp')
     return {
       restrict: 'E',
       scope: {
-        name: "@",
-        imagesrc:  "@",
-        abilities: "="
+        name: '@',
+        imagesrc: '@',
+        atk: '@',
+        abilities: '=',
+        roles: '=',
+        remove: '&'
       },
       templateUrl: '/views/partials/hero.html'
     };

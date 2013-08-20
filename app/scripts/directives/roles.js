@@ -42,3 +42,12 @@ angular.module('dota2sucksApp')
     };
   });
 
+angular.module('dota2sucksApp')
+  .directive('role', function () {
+    return {
+      restrict: 'E',
+      scope: {
+        role: '@'
+      }
+    };
+  });

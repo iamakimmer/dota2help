@@ -1,33 +1,27 @@
 <div class="hero">
-  <div class="name">{{name}}</div>
+  <div class="name" ng-click="$parent.remove(name)">{{name}} ({{atk}})</div>
   <div class="portrait">
-    <img src="{{imagesrc}}"></img>
+    <img src="{{imagesrc}}" ng-click="$parent.remove(name)"></img>
   </div>
-
-
-  <div class="skills">
-    <ul class="skilllist">
-    <li ng-repeat="ability in abilities">
-      <img src="{{ability.img}}"></img>
-
-      <!--<div ng-bind-html-unsafe="ability.dname"></div>
-      <div ng-bind-html-unsafe="ability.desc"></div>
-      <div ng-bind-html-unsafe="ability.attrib"></div>
-      <div ng-bind-html-unsafe="ability.affects"></div>-->
-    </li>
-  <!--    <li><img src="http://media.steampowered.com/apps/dota2/images/abilities/earthshaker_fissure_hp1.png"></img></li>
-      <li><img src="http://media.steampowered.com/apps/dota2/images/abilities/earthshaker_fissure_hp1.png"></img></li>
-      <li><img src="http://media.steampowered.com/apps/dota2/images/abilities/earthshaker_fissure_hp1.png"></img></li>
-      <li><img src="http://media.steampowered.com/apps/dota2/images/abilities/earthshaker_fissure_hp1.png"></img></li>-->
-    </ul>
-  </div>
-
-
   <div class="roles">
-    <div>1</div>
-    <div>1</div>
-    <div>1</div>
+    <div ng-repeat="role in roles">
+      <role role="{{role}}" class="role">
+        <span><img src="/images/{{role}}.png"></img></span>
+        <span class="role-details">{{role}}</span>
+      </role>
+    </div>
   </div>
 
+  <div class="abilities">
+    <div class="ability" ng-repeat="ability in abilities">
+      <a href="http://www.youtube.com/watch?v=5n9dPC349Lw" ability="{{ability.dname}}" rel="prettyPhoto"><img src="{{ability.img}}"></img></a>
+      <div class="ability-details">
+        <span class="name" ng-bind-html-unsafe="ability.dname"></span><br/>
+        <span ng-bind-html-unsafe="ability.desc"></span><br/>
+        <span ng-bind-html-unsafe="ability.attrib"></span><br/>
+        <span ng-bind-html-unsafe="ability.affects"></span>
+      </div>
+    </div>
+  </div>
 </div>
 

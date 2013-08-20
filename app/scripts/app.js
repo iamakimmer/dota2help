@@ -3,11 +3,11 @@
 angular.module('dota2sucksApp', ['ngResource', 'ngSanitize'])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/heroes', {
         templateUrl: 'views/heroes.html',
         controller: 'HeroesCtrl'
       })
-      .when('/heroes', {
+      .when('/heroes/:x/:y', {
         templateUrl: 'views/heroes.html',
         controller: 'HeroesCtrl'
       })
