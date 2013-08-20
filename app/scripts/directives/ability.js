@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dota2sucksApp')
-  .directive('ability', function () {
+  .directive('ability', function() {
     return {
       restrict: 'A',
       link: function (scope, elem) {
@@ -10,6 +10,6 @@ angular.module('dota2sucksApp')
         $(elem).prettyPhoto({
           deeplinking: false
         });
-      };
+      }
     };
   });
